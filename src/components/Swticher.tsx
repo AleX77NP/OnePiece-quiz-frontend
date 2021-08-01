@@ -16,6 +16,7 @@ const Swticher: React.FC = () => {
             onClick={toggleColorMode}
             icon={<SunIcon/>}
             aria-label={`Switch to ${colorMode} mode`}
+            data-testid="icon-button"
             />
     )
 }

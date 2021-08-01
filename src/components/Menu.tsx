@@ -11,7 +11,7 @@ const Menu: React.FC = () => {
 
     return (
         <>
-            <div style={{width: '100px'}}>
+            <div style={{width: '100px'}} data-testid="menu">
                 <Button ref={btnRef} variant="solid"
                 colorScheme={colorMode === "light"? "green": "yellow"}
                 onClick={onOpen} leftIcon={<HamburgerIcon />} m={3}>
@@ -26,7 +26,7 @@ const Menu: React.FC = () => {
             >
                 <DrawerOverlay />
                 <DrawerContent>
-                <DrawerCloseButton />
+                <DrawerCloseButton data-testid="close-btn" />
                 <DrawerHeader>Create your account</DrawerHeader>
 
                 <DrawerBody>
