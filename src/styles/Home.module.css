@@ -1,0 +1,54 @@
+.Container {
+  position: relative;
+}
+
+@keyframes zoro{
+    0%   { left: -300px; opacity: 0.5;}
+    100% { left: -0px; }
+  }
+
+@keyframes quiz{
+    0%   { top: -300px;}
+    100% { top: 50%}
+}
+
+.Zoro {
+  width: 100%;
+  animation-name: zoro;
+  animation-duration: 1s;
+  position: relative;
+}
+
+.Options {
+  position: absolute;
+  animation-name: quiz;
+  animation-duration: 2s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  border: solid; /* no info for size nor color yet */
+  box-shadow: 0 0 0 8px yellow;
+  border-radius: 3px; /* prefix not needed anymore */
+}
+
+
+.Start{
+  font-size: 23px;
+}
+
+@media only screen and (max-width: 768px) {
+  .Options {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: translate(-0%, -0%);
+    width: 200px;
+    margin: auto;
+  }
+  .Zoro {
+    width: auto;
+    margin: auto;
+  }
+}
+
