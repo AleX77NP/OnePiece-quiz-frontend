@@ -1,1 +1,83 @@
+.wrapper {
+    height: 200px;
+    width: 200px;
+    margin: 15% 0;
+}
 
+.boxArea {
+    animation: animate 10s ease-in-out infinite;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0;
+}
+
+.box {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    background-color: silver;
+    opacity: 0.9;
+}
+
+#box1 {
+    background-image: url('./images/languages/js.png');
+    background-size: cover;
+    background-position: center center;
+    transform: translateZ(100px);
+}
+
+#box2 {
+    background-image: url('./images/languages/ts.png');
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+#box3 {
+    background-image: url('./images/languages/golang.png');
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+}
+
+#box4 {
+    background-image: url('./images/languages/java.png');
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+}
+
+#box5 {
+    background-image: url('./images/languages/python.png');
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+}
+
+#box6 {
+    background-image: url('./images/languages/swift.png');
+    background-size: cover;
+    background-position: center center;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes animate {
+    from, to {
+        transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+        transform:  rotateY(-90deg)
+    }
+    33%{
+        transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+        transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+        transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+        transform: rotateX(90deg);
+    }
+}
