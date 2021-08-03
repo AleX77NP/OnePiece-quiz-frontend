@@ -5,6 +5,7 @@ import About from './components/About';
 import Hobbies from './components/Hobbies';
 import Nav from './components/Nav';
 import OtherTech from './components/OtherTech';
+import Projects from './components/Projects';
 import TechStack from './components/TechStack';
 import Auth from './pages/Auth';
 //import Home from './pages/Home';
@@ -19,6 +20,8 @@ function App() {
       <Divider mt="50px" />
       <TechStack />
       <OtherTech />
+      <Divider mt="50px" />
+      <Projects />
       <Divider mt="50px" />
       <Hobbies />
     </>

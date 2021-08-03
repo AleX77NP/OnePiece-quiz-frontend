@@ -1,4 +1,4 @@
-import { Button, Container, FormControl, FormHelperText, Input, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, useColorMode, Text, Heading } from '@chakra-ui/react'
+import { Button, Container, FormControl, Input, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, useColorMode, Text, Heading } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Image } from "@chakra-ui/react"
 import leo from '../../images/leo.png'
@@ -27,7 +27,6 @@ const Register: React.FC<Props> = ({toggleLogin}) => {
             <FormControl mb={4} id="email">
             <Text mb={3}>Email address</Text>
                 <Input type="email" placeholder="Enter Your email address" focusBorderColor={borderColor} errorBorderColor="red.300" />
-                <FormHelperText>We'll never share your email address.</FormHelperText>
             </FormControl>
             <FormControl mb={4} id="username">
                 <Text mb={3}>Username</Text>
