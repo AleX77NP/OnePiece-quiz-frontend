@@ -1,10 +1,11 @@
 import { Center, Container, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import react from '../images/tech/react.png'
+//import react from '../images/tech/react.png'
 import django from '../images/tech/django.png'
 import flask from '../images/tech/flask.png'
 import spring from '../images/tech/spring.png'
 import node from '../images/tech/node.png'
+import react2 from '../images/tech/react.gif'
 
 const TechStack: React.FC = () => {
     return (
@@ -16,7 +17,7 @@ const TechStack: React.FC = () => {
                     <Container centerContent>
                         <Text mt="15%" fontWeight="medium" fontSize="16px">Frameworks</Text>
                         <Flex w="100%" justify="space-evenly">
-                            <Image boxSize={['50px', '80px']} alt="react" src={react} />
+                            <Image boxSize={['50px', '80px']} alt="react" src={react2} />
                             <Image boxSize={['50px', '80px']} alt="node" src={node} />
                             <Image boxSize={['50px', '80px']} alt="django" src={django} />
                             <Image boxSize={['50px', '80px']} alt="flask" src={flask} />

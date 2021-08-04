@@ -5,6 +5,7 @@ import React from 'react'
 import {FaTwitter, FaGithub, FaLinkedin} from 'react-icons/fa'
 import {MdEmail} from 'react-icons/md'
 import {AiOutlineCopyrightCircle} from 'react-icons/ai'
+import { currentYear } from '../utils/dates'
 
 const Menu: React.FC = () => {
 
@@ -75,7 +76,7 @@ const Menu: React.FC = () => {
                     <HStack>
                         <Text>Copyright</Text>
                         <AiOutlineCopyrightCircle />
-                        <Text>2021 AMOPdev</Text>
+                        <Text>{currentYear} AMOPdev</Text>
                     </HStack>
                 </DrawerFooter>
                 </DrawerContent>
