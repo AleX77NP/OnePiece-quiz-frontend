@@ -1,5 +1,5 @@
 import { Divider } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -10,14 +10,48 @@ import Projects from './components/Projects';
 import ScrollButton from './components/ScrollButton';
 import TechStack from './components/TechStack';
 import Auth from './pages/Auth';
-//import Home from './pages/Home';
+import Home from './pages/Home';
+import { useAppSelector, useAppDispatch } from './app/hooks'
+import { loadUser, userError, selectAuth } from './features/auth/authSlice';
+import { BACKEND_URL } from './constants/api';
+import Loading from './components/Loading';
 
-function App() {
+
+const App: React.FC = () => {
+
+  const authState = useAppSelector(selectAuth)
+  const dispatch = useAppDispatch()
+
+  console.log(authState.auth)
+
+  useEffect(() => {
+    const fetchUser = async() => {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/auth/user`, {
+          headers: {
+            'Authorization': `Token ${localStorage.getItem('token')}`
+          }
+        });
+        const user = await response.json()
+        console.log(user)
+        if(response.status === 200) {
+          dispatch(loadUser(user))
+        } else {
+          dispatch(userError())
+        }
+      } catch(e) {
+        console.error(e)
+      }
+    }
+
+    fetchUser()
+  },[dispatch])
+
   return (
     <>
       <Nav />
       <ScrollButton />
-      <Auth />
+      {authState.auth.isLoading ? <Loading /> : authState.auth.isAuthenticated ? <Home /> : <Auth />}
       <Divider />
       <About />
       <Divider mt="50px" />

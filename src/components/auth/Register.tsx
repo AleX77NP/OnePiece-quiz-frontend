@@ -5,6 +5,10 @@ import leo from '../../images/leo.png'
 import { BACKEND_URL } from '../../constants/api'
 import { validateEmail, validateUsername } from '../../utils/validation/validateUsername'
 import { validateConfirmPassword, validatePassword } from '../../utils/validation/validatePassword'
+import { INVALID_EMAIL_ADDRESS, INVALID_PASSWORD, INVALID_PASSWORD_MATCH, INVALID_USERNAME } from '../../constants/validationErrors'
+import { SERVER_ERROR, USERNAME_TAKEN } from '../../constants/authErrors'
+import { useAppDispatch } from '../../app/hooks'
+import {signup} from '../../features/auth/authSlice'
 
 interface Props {
     toggleLogin: () => void
@@ -23,7 +27,9 @@ const Register: React.FC<Props> = ({toggleLogin}) => {
     const [password, setPassword] = useState('')
     const [confirmPwd, setConfirmPwd] = useState('')
 
-    const [valError, setValError] = useState<string | null>(null)
+    const [error, setError] = useState<string | null>(null)
+
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         setTimeout(() => {
@@ -31,17 +37,17 @@ const Register: React.FC<Props> = ({toggleLogin}) => {
         },5500)
     },[])
 
-    const register = async(e: SyntheticEvent) => {
+    const registerUser = async(e: SyntheticEvent) => {
         e.preventDefault()
         if(!validateEmail(email)) {
-            setValError('Email address is not valid.')
+            setError(INVALID_EMAIL_ADDRESS)
         } else if(!validateUsername(username)) {
-            setValError('Username must be at least 5 characters long.')
+            setError(INVALID_USERNAME)
         }
          else if(!validatePassword(password)) {
-            setValError('Password must be at least 6 characters long.')
+            setError(INVALID_PASSWORD)
         } else if(!validateConfirmPassword(password, confirmPwd)) {
-            setValError('Passwords do not match.')
+            setError(INVALID_PASSWORD_MATCH)
         } 
          else {
             try {
@@ -56,10 +62,17 @@ const Register: React.FC<Props> = ({toggleLogin}) => {
                         'password': password
                     })
                 })
-                let responseJson = await response.json()
-                console.log(responseJson)
+                if (response.status === 400) {
+                    setError(USERNAME_TAKEN)
+                } else if (response.status === 500) {
+                    setError(SERVER_ERROR)
+                } else {
+                    let responseJson = await response.json()
+                    dispatch(signup(responseJson))
+                    //console.log(responseJson)
+                }
             } catch(e) {
-                console.log(e)
+                console.error(e)
             }
         }
     }
@@ -67,7 +80,7 @@ const Register: React.FC<Props> = ({toggleLogin}) => {
     return (
         <Container mt={5}>
             <Heading textAlign="center">Register</Heading>
-            <form onSubmit={register}>
+            <form onSubmit={registerUser}>
                 <FormControl mb={4} id="email">
                 <Text mb={3}>Email address</Text>
                     <Input type="email" placeholder="Enter Your email address" focusBorderColor={borderColor} errorBorderColor="red.300" value={email} onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.currentTarget.value)} isRequired />
@@ -85,9 +98,9 @@ const Register: React.FC<Props> = ({toggleLogin}) => {
                     <Input type="password" placeholder="Enter Your password again" focusBorderColor={borderColor} errorBorderColor="red.300" value={confirmPwd} onChange={(e: React.FormEvent<HTMLInputElement>) => setConfirmPwd(e.currentTarget.value)} isRequired />
                 </FormControl>
                 <Text mb={3}>Already have an account? <span style={{fontWeight: 'bold', cursor: 'pointer' }} onClick={() => toggleLogin()}>Login here</span></Text>
-                {valError ? <Alert mb={4} status="error"> 
+                {error ? <Alert mb={4} status="error"> 
                     <AlertIcon />
-                    {valError}
+                    {error}
                 </Alert>: null}
                 <Button type="submit" size="lg" mb={5} colorScheme={colorMode === 'light' ? 'green': 'yellow'}>Register</Button>
             </form>

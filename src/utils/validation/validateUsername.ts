@@ -14,5 +14,5 @@ export const validateEmail = (email: string): boolean => {
 }
 
 export const validateUsername = (username: string): boolean => {
-    return username.length > 5
+    return username.length > 3
 }

@@ -1,8 +1,11 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react'
-import { Button, Container, FormControl, Heading, Input, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text, useColorMode } from '@chakra-ui/react'
+import { Alert, AlertIcon, Button, Container, FormControl, Heading, Input, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text, useColorMode } from '@chakra-ui/react'
 import { Image } from "@chakra-ui/react"
 import chopper from '../../images/chopper.png'
 import { BACKEND_URL } from '../../constants/api'
+import { INVALID_CREDENTIALS, SERVER_ERROR } from '../../constants/authErrors'
+import { useAppDispatch } from '../../app/hooks'
+import {signin} from '../../features/auth/authSlice'
 
 interface Props {
     toggleLogin: () => void
@@ -18,6 +21,10 @@ const Login: React.FC<Props> = ({toggleLogin}) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+
+    const [authError, setAuthError] = useState<string | null>(null)
+
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         let isMounted = true;     
@@ -43,10 +50,17 @@ const Login: React.FC<Props> = ({toggleLogin}) => {
                     'password': password
                 })
             })
-            let responseJson = await response.json()
-            console.log(responseJson)
+            if (response.status === 400) {
+                setAuthError(INVALID_CREDENTIALS)
+            } else if (response.status === 500) {
+                setAuthError(SERVER_ERROR)
+            } else {
+                let responseJson = await response.json()
+                dispatch(signin(responseJson))
+                console.log(responseJson)
+            }
         } catch(e) {
-            console.log(e)
+            console.error(e)
         }
     }
 
@@ -64,6 +78,10 @@ const Login: React.FC<Props> = ({toggleLogin}) => {
                     <Input placeholder="Enter Your password" type="password" focusBorderColor={borderColor} errorBorderColor="red.300" value={password} onChange={(e: React.FormEvent<HTMLInputElement>) => setPassword(e.currentTarget.value)} isRequired />
                 </FormControl>
                 <Text mb={3}>Don't have an account? <span style={{fontWeight: 'bold', cursor: 'pointer' }} onClick={() => toggleLogin()}>Register here</span></Text>
+                {authError ? <Alert mb={4} status="error"> 
+                    <AlertIcon />
+                    {authError}
+                </Alert>: null}
                 <Button type="submit" size="lg" mb={5} colorScheme={colorMode === 'light' ? 'green': 'yellow'}>Login</Button>
             </form>
 

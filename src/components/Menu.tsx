@@ -6,11 +6,15 @@ import {FaTwitter, FaGithub, FaLinkedin} from 'react-icons/fa'
 import {MdEmail} from 'react-icons/md'
 import {AiOutlineCopyrightCircle} from 'react-icons/ai'
 import { currentYear } from '../utils/dates'
+import UserProfile from './UserProfile'
+import { useAppSelector } from '../app/hooks'
+import { selectAuth } from '../features/auth/authSlice'
 
 const Menu: React.FC = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { colorMode } = useColorMode()
+    const authState = useAppSelector(selectAuth)
     const btnRef = React.useRef<HTMLButtonElement>(null)
     const borderColor = colorMode === 'light' ? "green.600" : "yellow.300"
 
@@ -31,6 +35,9 @@ const Menu: React.FC = () => {
             >
                 <DrawerOverlay />
                 <DrawerContent>
+
+                    {authState.auth.isAuthenticated ? <UserProfile username={authState.auth.user?.username} /> : null}
+
                 <DrawerCloseButton data-testid="close-btn" />
                 <DrawerHeader>Contact Me</DrawerHeader>
 
