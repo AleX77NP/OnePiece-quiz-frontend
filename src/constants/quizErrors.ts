@@ -1,0 +1,1 @@
+export const QUESTION_ERROR = "Couldn't get questions. Please try again later."

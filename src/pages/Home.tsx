@@ -1,10 +1,18 @@
 import React from 'react'
 import Enter from '../components/Enter'
+import QuestionList from '../components/quiz/QuestionList'
+import { useAppSelector } from '../app/hooks'
+import { selectQuiz } from '../features/quiz/quizSlice'
 
 const Home: React.FC = () => {
+
+    const quizState = useAppSelector(selectQuiz)
+
     return (
         <>
-           <Enter />
+           {
+               quizState.quiz.isReady ? <QuestionList /> : <Enter />
+           }
         </>
     )
 }

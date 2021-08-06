@@ -16,14 +16,16 @@ const OtherTech: React.FC = () => {
         <div style={{marginTop: '50px'}}>
             <Center>
                 <Flex w={['95%', '95%', '95%', '75%']} direction={['column', 'column', 'row']}>
-                    <Container centerContent>
-                    <Text mt="10%" fontSize={['17px', '18px']} fontWeight="medium" textAlign={['center', 'left']} border="2px" borderRadius={8} p={7}>
+                    <Container centerContent  border="2px" borderRadius={8} p={7} mt="5%" mb="2.5%">
+                    <Text  fontSize={['17px', '18px']} fontWeight="medium" textAlign={['center', 'left']}>
                             Databases were probably my favorite subject. I took Advanced Database Systems course and I just fell in love with them.
                             After learning about NoSQL databases my love for them just continued to expand. 
                             <span style={{color: 'green'}}> MongoDB</span> and <span style={{color: '#0080ff'}}>PostgresSQL</span> are my two favorites, and of course <span style={{color: 'orange'}}>Firebase</span> for mobile apps.<br />
-                            <Divider mt={2} mb={2} />
-                            In order to advance my skills, I learned some other tools that help my build my projects. <span style={{color: '#6666ff'}}>Redux</span> is my favorite for state managment, while for deploying my apps I always go with <span style={{color: '#0060ff'}}>Docker</span> (<span style={{color: '#3333ff'}}>Kubernetes</span>).
-                            I also used <span style={{color: '#00e6e6'}}>gRPC</span> for internal communication between microservices, and a little bit of <span style={{color: '#ff1ac6'}}>GraphQL</span>. 
+                        </Text>
+                        <Divider mt={2} mb={2} />
+                        <Text fontSize={['17px', '18px']} fontWeight="medium" textAlign={['center', 'left']}>
+                        In order to advance my skills, I learned some other tools that help my build my projects. <span style={{color: '#6666ff'}}>Redux</span> is my favorite for state managment, while for deploying my apps I always go with <span style={{color: '#0060ff'}}>Docker</span> (<span style={{color: '#3333ff'}}>Kubernetes</span>).
+                        I also used <span style={{color: '#00e6e6'}}>gRPC</span> for internal communication between microservices, and a little bit of <span style={{color: '#ff1ac6'}}>GraphQL</span>. 
                         </Text>
                     </Container>
 
