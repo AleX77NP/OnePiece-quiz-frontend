@@ -33,7 +33,7 @@ const App: React.FC = () => {
           }
         });
         const user = await response.json()
-        console.log(user)
+        //console.log(user)
         if(response.status === 200) {
           dispatch(loadUser(user))
         } else {
@@ -41,6 +41,7 @@ const App: React.FC = () => {
         }
       } catch(e) {
         console.error(e)
+        dispatch(userError())
       }
     }
 
