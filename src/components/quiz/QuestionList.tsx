@@ -69,7 +69,6 @@ const QuestionList: React.FC = () => {
             <Container>
             <Text mb="25px" fontSize={['17px','21px']} textAlign="center">Question {quizState.quiz.question + 1} / 12</Text>
             <Progress colorScheme={colorMode === 'light' ? 'green': 'yellow'} isAnimated hasStripe min={1} max={12} value={quizState.quiz.question + 1} />
-            <h1>{quizState.quiz.currentScore}</h1>
             </Container>
         </div>
     )

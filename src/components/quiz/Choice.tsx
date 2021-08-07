@@ -2,7 +2,7 @@ import { Center, Text, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import { Answer } from '../../interfaces/Answer'
 import {useAppDispatch, useAppSelector } from '../../app/hooks'
-import { changeScore, goNext, selectQuiz } from '../../features/quiz/quizSlice'
+import { changeScore, finishQuiz, goNext, selectQuiz } from '../../features/quiz/quizSlice'
 
 interface Props {
     answer: Answer
@@ -18,17 +18,19 @@ const Choice: React.FC<Props> = ({answer}) => {
     const quizState = useAppSelector(selectQuiz)
 
     const nextQuestion = () => {
-        if(quizState.quiz.question < 11) {
-            dispatch(goNext())
-        }
         if(answer.correct) {
             dispatch(changeScore())
+        }
+        if(quizState.quiz.question < 11) {
+            dispatch(goNext())
+        } else {
+            dispatch(finishQuiz())
         }
     }
 
     return (
         <button style={{cursor: 'pointer'}} onClick={nextQuestion}>
-            <Center bg={borderColor} w="270px" h="55px" borderRadius="8" cursor="pointer">
+            <Center bg={borderColor} w={['255px','270px']} h="55px" borderRadius="8" cursor="pointer">
                 <Text color={colorMode === 'light' ? 'white' : 'initial'} fontSize={['17px', '20px']} fontWeight="medium">{answer.text}</Text>
             </Center>
         </button>

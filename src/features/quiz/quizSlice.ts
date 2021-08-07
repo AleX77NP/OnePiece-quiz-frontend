@@ -5,14 +5,16 @@ export interface QuizState {
     isReady: boolean,
     question: number
     isFinished: boolean,
-    currentScore: number
+    currentScore: number,
+    error : string | null
 }
 
 const initialState: QuizState = {
     isReady: false,
     question: 0,
     isFinished: false,
-    currentScore: 0
+    currentScore: 0,
+    error: null,
 }
 
 export const quizSlice = createSlice({
@@ -31,18 +33,19 @@ export const quizSlice = createSlice({
         finishQuiz: (state) => {
             state.isFinished = true
         },
-        quizError: (state) => {
+        resetQuiz: (state) => {
             state.isReady = false
             state.isFinished = false
             state.question = 0
-        }
+            state.currentScore = 0
+        },
     },
     extraReducers: {
 
     }
 })
 
-export const {setReady, goNext, finishQuiz, changeScore, quizError} = quizSlice.actions
+export const {setReady, goNext, finishQuiz, changeScore, resetQuiz} = quizSlice.actions
 
 export const selectQuiz = (state: RootState) => state
 

@@ -81,3 +81,66 @@
         transform: rotateX(90deg);
     }
 }
+
+.current {
+    position: absolute;
+    top: 320px;
+    color: black;
+    font-size: 24px;
+    font-weight:normal;
+    text-transform: uppercase;
+}
+.prev {
+    position: absolute;
+    top: 270px;
+    color: black;
+    font-size: 18px;
+    font-weight:normal;
+}
+
+.new {
+    position: absolute;
+    top: 420px;
+    color: black;
+    font-size: 21px;
+    font-weight:normal;
+    color: green;
+    text-transform: uppercase;
+}
+
+.user {
+    position: absolute;
+    top: 555px;
+    color: black;
+    font-size: 28px;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+    .user {
+        font-size: 23px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .current {
+        font-size: 21px;
+    }
+    .user {
+        top: 515px;
+        font-size: 21px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .user {
+        top: 455px;
+        font-size: 18px;
+    }
+    .current {
+        font-size: 18px;
+    }
+}
+
