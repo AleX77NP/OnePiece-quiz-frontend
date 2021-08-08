@@ -40,7 +40,6 @@ const App: React.FC = () => {
           }
         });
         const user = await response.json()
-        //console.log(user)
         if(response.status === 200) {
           dispatch(loadUser(user))
         } else {
@@ -55,11 +54,11 @@ const App: React.FC = () => {
     fetchUser()
   },[dispatch])
 
-  return (
+  return authState.auth.isLoading ? <Loading /> :  (
     <>
       <Nav />
       <ScrollButton />
-      {authState.auth.isLoading ? <Loading /> : authState.auth.isAuthenticated ? <Home /> : <Auth />}
+      {authState.auth.isAuthenticated ? <Home /> : <Auth />}
       <Divider />
       <About />
       <Divider mt="50px" />

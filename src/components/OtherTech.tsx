@@ -10,6 +10,7 @@ import docker from '../images/tech/docker.png'
 import kubernetes from '../images/tech/kubernetes.png'
 import grpc from '../images/tech/grpc.png'
 import graphql from '../images/tech/graphql.png'
+import Wrapper from './Wrapper'
 
 const OtherTech: React.FC = () => {
     return (
@@ -24,7 +25,7 @@ const OtherTech: React.FC = () => {
                         </Text>
                         <Divider mt={2} mb={2} />
                         <Text fontSize={['17px', '18px']} fontWeight="medium" textAlign={['center', 'left']}>
-                        In order to advance my skills, I learned some other tools that help my build my projects. <span style={{color: '#6666ff'}}>Redux</span> is my favorite for state managment, while for deploying my apps I always go with <span style={{color: '#0060ff'}}>Docker</span> (<span style={{color: '#3333ff'}}>Kubernetes</span>).
+                        In order to advance my skills, I learned some other tools that help me build my projects. <span style={{color: '#6666ff'}}>Redux</span> is my favorite for state managment, while for deploying my apps I always go with <span style={{color: '#0060ff'}}>Docker</span> (<span style={{color: '#3333ff'}}>Kubernetes</span>).
                         I also used <span style={{color: '#00e6e6'}}>gRPC</span> for internal communication between microservices, and a little bit of <span style={{color: '#ff1ac6'}}>GraphQL</span>. 
                         </Text>
                     </Container>
@@ -54,4 +55,4 @@ const OtherTech: React.FC = () => {
     )
 }
 
-export default OtherTech
+export default Wrapper(OtherTech)

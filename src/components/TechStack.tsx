@@ -6,6 +6,7 @@ import flask from '../images/tech/flask.png'
 import spring from '../images/tech/spring.png'
 import node from '../images/tech/node.png'
 import react2 from '../images/tech/react.gif'
+import Wrapper from './Wrapper'
 
 const TechStack: React.FC = () => {
     return (
@@ -39,4 +40,4 @@ const TechStack: React.FC = () => {
     )
 }
 
-export default TechStack
+export default Wrapper(TechStack)

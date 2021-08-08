@@ -2,6 +2,7 @@ import { Center, Container, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import partizan from '../images/hobbies/partizan.png'
 import onepiece from '../images/hobbies/onepiece.png'
+import Wrapper from './Wrapper'
 
 const Hobbies: React.FC = () => {
     return (
@@ -30,4 +31,4 @@ const Hobbies: React.FC = () => {
     )
 }
 
-export default Hobbies
+export default Wrapper(Hobbies)

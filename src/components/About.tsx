@@ -1,6 +1,7 @@
 import { Center, Container, Flex, Heading, Text, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import '../App.css'
+import Wrapper from './Wrapper'
 
 const About: React.FC = () => {
 
@@ -40,4 +41,4 @@ const About: React.FC = () => {
     )
 }
 
-export default About
+export default Wrapper(About)

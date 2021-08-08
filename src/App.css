@@ -117,6 +117,16 @@
     text-transform: uppercase;
 }
 
+@keyframes goUp {
+    0% {transform: translateY(350px);}
+    100% {transform: translateY(0px);}
+}
+
+.up {
+    position: relative;
+    animation: goUp 0.75s linear;
+}
+
 @media only screen and (max-width: 768px) {
     .user {
         font-size: 23px;

@@ -7,6 +7,7 @@ import ProjectItem from './ProjectItem'
 import { FaGithub } from 'react-icons/fa'
 import { PORTFOLIO_ERROR } from '../constants/errors'
 import ErrorMessage from './ErrorMessage'
+import Wrapper from './Wrapper'
 
 const Projects: React.FC = () => {
 
@@ -60,4 +61,4 @@ const Projects: React.FC = () => {
     )
 }
 
-export default Projects
+export default Wrapper(Projects)
