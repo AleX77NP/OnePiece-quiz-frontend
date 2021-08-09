@@ -29,7 +29,7 @@ const App: React.FC = () => {
   const authState = useAppSelector(selectAuth)
   const dispatch = useAppDispatch()
 
-  console.log(authState.auth)
+  //console.log(authState.auth)
 
   useEffect(() => {
     const fetchUser = async() => {
