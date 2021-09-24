@@ -4,7 +4,7 @@ import mongo from '../images/tech/mongo.png'
 import postgres from '../images/tech/postgres.png'
 import redis from '../images/tech/redis.png'
 import mysql from '../images/tech/mysql.png'
-import firebase from '../images/tech/firebase.png'
+import sqlserver from '../images/tech/sqlserver.png'
 import redux from '../images/tech/redux.png'
 import docker from '../images/tech/docker.png'
 import kubernetes from '../images/tech/kubernetes.png'
@@ -21,7 +21,7 @@ const OtherTech: React.FC = () => {
                     <Text  fontSize={['17px', '18px']} fontWeight="medium" textAlign={['center', 'left']}>
                             Databases were probably my favorite subject. I took Advanced Database Systems course and I just fell in love with them.
                             After learning about NoSQL databases my love for them just continued to expand. 
-                            <span style={{color: 'green'}}> MongoDB</span> and <span style={{color: '#0080ff'}}>PostgresSQL</span> are my two favorites, and of course <span style={{color: 'orange'}}>Firebase</span> for mobile apps.<br />
+                            <span style={{color: 'green'}}> MongoDB</span> and <span style={{color: '#0080ff'}}>PostgresSQL</span> are my two favorites, and of course <span style={{color: 'orange'}}>SQL Server</span> for ultimate .NET stack.<br />
                         </Text>
                         <Divider mt={2} mb={2} />
                         <Text fontSize={['17px', '18px']} fontWeight="medium" textAlign={['center', 'left']}>
@@ -37,7 +37,7 @@ const OtherTech: React.FC = () => {
                             <Image boxSize={['50px', '80px']} alt="postgres" src={postgres} />
                             <Image boxSize={['50px', '80px']} alt="mysql" src={mysql} />
                             <Image boxSize={['50px', '80px']} alt="redis" src={redis} />
-                            <Image boxSize={['50px', '80px']} alt="firebase" src={firebase} />
+                            <Image boxSize={['50px', '80px']} alt="firebase" src={sqlserver} />
                         </Flex>
 
                         <Text mt="10%" mb="20px" fontWeight="medium" fontSize="16px">Other tools</Text>
