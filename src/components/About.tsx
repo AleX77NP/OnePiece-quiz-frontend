@@ -15,8 +15,8 @@ const About: React.FC = () => {
                     <Container maxW="2xl" centerContent>
                         <Text mt="10%" fontSize={['17px', '18px']} fontWeight="medium" textAlign={['center', 'left']} border="2px" borderRadius={8} p={7}>
                         My name is Aleksandar Milanović, and I am a software engineer from Novi Pazar, Serbia. I like to write web applications, 
-                        especially backend, but I also enjoy writing frontend.
-                        I also write mobile applications.
+                        especially backend, but I also enjoy writing User Interfaces.
+                        I also write mobile applications (iOS).
                         I graduated from the State University of Novi Pazar, 
                         majoring in software engineering, and as a topic for my bachelor thesis I chose 'Microservice architecture of web applications'.
                         My favorite programming languages are <span style={{color: colorMode === 'light' ? '#999900' : '#e6e600'}}>JavaScript</span> (<span style={{color: '#0080ff'}}>Typescript</span>), <span style={{color: '#00bfff'}}>Golang</span>, <span style={{color: '#00b33c'}}>Python</span>, <span style={{color: 'purple'}}>C#</span> and <span style={{color: 'orange'}}>Swift</span>.

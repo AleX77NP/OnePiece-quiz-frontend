@@ -8,6 +8,7 @@ import { FaGithub } from 'react-icons/fa'
 import { PORTFOLIO_ERROR } from '../constants/errors'
 import ErrorMessage from './ErrorMessage'
 import Wrapper from './Wrapper'
+import netflixClone from '../images/tech/netflix-clone.jpg'
 
 const Projects: React.FC = () => {
 
@@ -57,6 +58,25 @@ const Projects: React.FC = () => {
                         ))}
                     </Flex>}
             </Center>
+
+
+                <Center mb={5}>
+                    <Text  p={['5', '0']} fontSize={24}>Bachelor's Thesis: <span style={{color: 'red'}}>Netflix Clone</span> - Microservice Architecture</Text>
+                </Center>
+
+
+                <Center>
+                <Text w={600} p={['5', '0']}>
+                        Here You can check the project that I am most proud of - Netflix Clone. It was developed using many different technologies, such
+                        as Fastify(Node), Flask, Spring Clound, Next.js, Docker (Compose), MongoDb, PostgresSql, and External API. Currently, it is not hosted, but by clicking on the image below, You can see the codebase.
+                    </Text>
+                </Center>
+    
+                <Center mt={5}>
+                    <Link p={['5', '0']} href="https://github.com/AleX77NP/Netflix-clone-microservices">
+                        <img  style={{width: '600px'}} src={netflixClone} alt="netflix0-clone" />
+                    </Link>
+                </Center>
         </div>
     )
 }
