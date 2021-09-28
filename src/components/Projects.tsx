@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
                     </Text>
                 </Center>
     
-                <Center mt={5}>
+                <Center mt={8}>
                     <Link p={['5', '0']} href="https://github.com/AleX77NP/Netflix-Clone">
                         <img  style={{width: '600px'}} src={netflixClone} alt="netflix0-clone" />
                     </Link>
