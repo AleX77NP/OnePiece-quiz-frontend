@@ -30,7 +30,7 @@ const TechStack: React.FC = () => {
                         <Text mt="10%" fontSize={['17px', '18px']} fontWeight="medium" textAlign={['center', 'left']} border="2px" borderRadius={8} p={7}>
                             I use a lot of technologies related to mentioned programming languages. These include framework, libraries and other tools.
                             Here is the list of some frontend and backend frameworks that I use all the time.
-                            When it comes to Node, I usually go for <span style={{color: 'green'}}>Express.js</span>. Besides these, I also use <span style={{color: 'red'}}>Django REST framework</span> very ofter, as well as Golang's <span style={{color: 'cyan'}}>Gin/Fiber</span>.
+                            When it comes to Node, I usually go for <span style={{color: 'green'}}>Express.js</span>. Besides these, I also use <span style={{color: 'red'}}>Django REST framework</span> very often, as well as Golang's <span style={{color: 'cyan'}}>Gin/Fiber</span>.
                         </Text>
                     </Container>
 

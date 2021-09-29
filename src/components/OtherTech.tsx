@@ -25,7 +25,7 @@ const OtherTech: React.FC = () => {
                         
                         <Divider mt={2} mb={2} />
                        
-                        In order to advance my skills, I learned some other tools that help me build my projects. <span style={{color: '#6666ff'}}>Redux</span> is my favorite for state managment, while for deploying my apps I always go with <span style={{color: '#0060ff'}}>Docker</span> (<span style={{color: '#3333ff'}}>Kubernetes</span>).
+                        In order to advance my skills, I learned some other tools that help me build my projects. <span style={{color: '#6666ff'}}>Redux</span> is my favorite for state managment, while for deploying my apps I always go with <span style={{color: '#0060ff'}}>Docker</span>.
                         I also used <span style={{color: '#00e6e6'}}>gRPC</span> for internal communication between microservices, and a little bit of <span style={{color: '#ff1ac6'}}>GraphQL</span>. 
                        </Text>
                     </Container>
