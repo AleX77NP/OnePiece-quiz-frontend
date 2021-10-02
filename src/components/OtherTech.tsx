@@ -7,7 +7,7 @@ import mysql from '../images/tech/mysql.png'
 import sqlserver from '../images/tech/sqlserver.png'
 import redux from '../images/tech/redux.png'
 import docker from '../images/tech/docker.png'
-import kubernetes from '../images/tech/kubernetes.png'
+import awsKub from '../images/tech/aws-k8s.png'
 import grpc from '../images/tech/grpc.png'
 import graphql from '../images/tech/graphql.png'
 import Wrapper from './Wrapper'
@@ -21,17 +21,17 @@ const OtherTech: React.FC = () => {
                     <Text  fontSize={['17px', '18px']} border="2px" fontWeight="medium" textAlign={['center', 'left']}  borderRadius={8} p={7}>
                             Databases were probably my favorite subject. I took Advanced Database Systems course and I just fell in love with them.
                             After learning about NoSQL databases my love for them just continued to expand. 
-                            <span style={{color: 'green'}}> MongoDB</span> and <span style={{color: '#0080ff'}}>PostgresSQL</span> are my two favorites, and of course <span style={{color: 'orange'}}>SQL Server</span> for ultimate .NET stack.<br />
+                            <span style={{color: 'green'}}> MongoDB</span> and <span style={{color: '#0080ff'}}>PostgresSQL</span> are my two favorites, and of course <span style={{color: 'red'}}>SQL Server</span> for ultimate .NET stack.<br />
                         
                         <Divider mt={2} mb={2} />
                        
                         In order to advance my skills, I learned some other tools that help me build my projects. <span style={{color: '#6666ff'}}>Redux</span> is my favorite for state managment, while for deploying my apps I always go with <span style={{color: '#0060ff'}}>Docker</span>.
-                        I also used <span style={{color: '#00e6e6'}}>gRPC</span> for internal communication between microservices, and a little bit of <span style={{color: '#ff1ac6'}}>GraphQL</span>. 
+                        I also used <span style={{color: '#00e6e6'}}>gRPC</span> for internal communication between microservices, and a little bit of <span style={{color: '#ff1ac6'}}>GraphQL</span>. I had the opportunity to try and work with <span style={{color: 'orange'}}>AWS</span> as well.
                        </Text>
                     </Container>
 
                     <Container centerContent>
-                        <Text mt="15%" mb="20px" fontWeight="medium" fontSize="16px">Databases</Text>
+                        <Text mt="12.5%" mb="20px" fontWeight="medium" fontSize="16px">Databases</Text>
                         <Flex w="100%" justify="space-evenly">
                             <Image boxSize={['50px', '80px']} alt="mongodb" src={mongo} />
                             <Image boxSize={['50px', '80px']} alt="postgres" src={postgres} />
@@ -44,10 +44,10 @@ const OtherTech: React.FC = () => {
                         <Flex w="100%" justify="space-evenly">
                             <Image boxSize={['50px', '80px']} alt="redux" src={redux} />
                             <Image boxSize={['50px', '80px']} alt="docker" src={docker} />
-                            <Image boxSize={['50px', '80px']} alt="kubernetes" src={kubernetes} />
                             <Image boxSize={['50px', '80px']} alt="grpc" src={grpc} />
                             <Image boxSize={['50px', '80px']} alt="graphql" src={graphql} />
                         </Flex>
+                        <Image mt={5} w={[120,200]} alt="kubernetes-and-aws" src={awsKub} />
                     </Container>
                 </Flex>
             </Center>
