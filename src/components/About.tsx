@@ -20,7 +20,7 @@ const About: React.FC = () => {
                         I graduated from the State University of Novi Pazar, 
                         majoring in software engineering, and as a topic for my bachelor thesis I chose 'Microservice architecture of modern Web applications'.
                         My favorite programming languages are <span style={{color: colorMode === 'light' ? '#999900' : '#e6e600'}}>JavaScript</span> (<span style={{color: '#0080ff'}}>Typescript</span>), <span style={{color: '#00bfff'}}>Golang</span>, <span style={{color: '#00b33c'}}>Python</span>, <span style={{color: 'purple'}}>C#</span> and <span style={{color: 'orange'}}>Swift</span>.
-                        I also worked with <span style={{color: 'FF7D33'}}>Java</span>, <span style={{color: 'C133FF'}}>Exlir</span>and <span style={{color: '81C510'}}>C</span>.
+                        I also worked with <span style={{color: '#FF7D33'}}>Java</span>, <span style={{color: '#C133FF'}}>Exlir</span> and <span style={{color: '#81C510'}}>C</span>.
                         </Text>
                     </Container>
 
